@@ -1,6 +1,6 @@
 # General User
 This is an example so you can take it and change it yourself.
-### The only things you have to have are libraries. You can install them in some IDE e.g. Pycharm or with pip:
+### The only things you need to have are libraries. You can install them in some IDE e.g. Pycharm or with pip:
 pip install flask<br>
 pip install socketio
 
