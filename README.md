@@ -1,7 +1,12 @@
 # General User
-### This is an example so you can take it and change it yourself.
+This is an example so you can take it and change it yourself.
+The only things you have to have are libraries. You can install them in some IDE e.g. Pycharm or with pip:
+pip install flask
+pip install socketio
+
 ### The whole project was designed in figma. Here is the link:
 https://www.figma.com/file/GOBZrowwR1UsK1V161xQb9/AboutTravels?type=design&node-id=0-1&mode=design
+
 
 # The appearance of the page:
 ## Home page
