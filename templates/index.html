@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+    <title>General User</title>
+  </head>
+  <body>
+    <div class="slides-container">
+      <div class="topbar">
+        <div class="left-side-of-bar">
+          <div class="logo">
+            <p style="font-weight:bolder; font-size:x-large;">GU</p>
+            <p style="font-size: small;">General User</p>
+          </div>
+          <a href="#main">Main</a>
+          <a href="#aboutus">About us</a>
+          <a href="#other">Other</a>
+        </div>
+        <div class="right-side-of-bar">
+          <button class="signup-button" onclick="location.href='/signup'">Sign up</button>
+          <button class="login-button" onclick="location.href='/login'">Log in</button>
+        </div>
+      </div>
+      <div class="slide1" id="main">
+        <div class="content-on-slide1">
+          <h2>The page is about</h2>
+          <h2>nothing....</h2>
+
+          <div style="margin-top: 3em;">
+            <button class="signup-button" style="padding: 0px 32px" onclick="location.href='/signup'">Sign up</button>
+            <button class="login-button" style="padding: 0px 32px" onclick="location.href='/login'">Log in</button>
+          </div>
+        </div>
+      </div>
+      <div class="slide2" id="aboutus">
+        <div class="content-on-slide2">
+          <h2>Lorem Ipsum</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+      <div class="slide3" id="other">
+        <div class="left-side-of-slide3">
+          <p style="width: 80%; font-size: 25">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="right-side-of-slide3">
+          <form class="signup-container" method="POST">
+            <h1 class="t1">Create an account</h1>
+            <div style="width: 100%; text-align: center; display: inline-block;">
+              <div style="display:inline-block; width: 49%">
+                <label class="t2">First name</label>
+                <input name="fname" class="input-other" type="text" placeholder="James" required>
+              </div>
+              <div style="display:inline-block; width: 49%">
+                <label class="t2">Last name</label>
+                <input name="lname" class="input-other" type="text" placeholder="Adams" required>
+              </div>
+            </div>
+            <label class="t2">User</label>
+            <input name="user" class="input-username" type="text" placeholder="Jimmy" required>
+            <label class="t2">Password</label>
+            <input name="password" class="input-password" type="password" placeholder="●●●●●●●●●●" required>
+            <p style="color:red">{{ blad2 }}</p>
+            <button class="signup-form-button" onclick="toggle()">Sign up</button>
+            <a href="/login" style="margin:0; margin-top: 2.5em; color: #9A9A9A; text-decoration: none; float: right;">Log in</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

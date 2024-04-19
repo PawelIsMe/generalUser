@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>GU Dashboard</title>
+  </head>
+  <body>
+    <div class="main-container" id="dimming">
+      <div class="sidebar">
+        <div class="logo" style="cursor:pointer;" onclick="location.href='/'">
+          <p style="font-weight:bolder; font-size:x-large;">GU</p>
+          <p style="font-size: small;">General User</p>
+        </div>
+        <div class="options-container">
+          <a href="">Dashboard</a>
+          <a href="">Option 1</a>
+          <a href="">Option 2</a>
+          <a href="">Option 3</a>
+          <a href="">Option 4</a>
+          <a href="">Option 5</a>
+        </div>
+        <div class="settings">
+          <a onclick="showSettings();" style="color: black; text-decoration: none; cursor: pointer;">Settings</a>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="top">
+          <div class="logo2" style="cursor:pointer;" onclick="location.href='/'">
+          <p style="font-weight:bolder; font-size:x-large;">GU</p>
+          <p style="font-size: small;">General User</p>
+          </div>
+          <p>Dashboard</p>
+          <div class="right-content-of-top">
+            <div class="top-menu">
+              <div class="dropbtn"><i id="drop1" onclick="drop()" class="fa fa-bars" style="font-size: 20"></i></div>
+              <div id="mDropdown" class="dropdown-content">
+                <a href="#">Dashboard</a>
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+                <a href="#">Option 4</a>
+                <a href="#">Option 5</a>
+                <a href="#" onclick="showSettings();">Settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <div style="margin:1em;">
+            <p style="margin-left: 0.5em; font-size: larger; font-weight: 700;">Welcome {{ session['user'] }}!</p>
+            <iframe id="ifr1" width="100%" height="450" src="https://embed.windy.com/embed2.html?lat=50.211&lon=19.141&detailLat=50.211&detailLon=19.141&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+      <div id="settings_popup">
+        <div style="display:flex;justify-content:flex-end;"><a onclick="showSettings();" style="cursor:pointer;">x</a></div>
+        <h2 style="text-align: center; margin: 0; margin-bottom: 1em;">Settings</h2>
+        <p>1 option</p>
+        <p>2 option</p>
+        <p>3 option</p>
+        <p>4 option</p>
+        <div style="display:flex;flex:1;flex-direction:column;justify-content:flex-end;align-items:center;">
+          <p onclick="logout();" style="cursor:pointer; color: red;">Log out</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // global variables
+      var x = true;
+      var dropdown = document.getElementById("mDropdown");
+
+      function drop() {
+        dropdown.classList.toggle('show');
+      }
+
+      function showSettings() {
+        //console.log("hej");
+        var dimming = document.getElementById('dimming');
+        var settings = document.getElementById('settings_popup');
+        var iframe = document.getElementById('ifr1');
+
+        // dimming 'main-content' and displaying a container with all settings (e.g. log out)
+        dropdown.classList.remove('show');
+        dimming.classList.toggle('active');
+        settings.classList.toggle('active');
+        if (x) {
+          iframe.style.opacity = '0.2';
+          x = false;
+        } else {
+          iframe.style.opacity = '1';
+          x = true;
+        }
+      }
+
+      function logout() {
+        console.log("logout");
+        fetch("/logout");
+        location.reload();
+      }
+
+      // TODO - clicking outside dropdown-content
+      window.addEventListener('click', function(e) {
+        if (e.target.id !== 'drop1') {
+          dropdown.classList.remove('show');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== For login.html and register.html ========== */
+.logo {
+  color: #fff;
+  text-align: center;
+
+  margin: 0;
+  margin-top: 1em;
+  margin-left: 5em;
+  position: absolute;
+}
+
+.logo p {
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  /*transition: 0.7s;*/
+  flex-direction: row;
+  margin: 0;
+}
+
+.left-side {
+  /*background-color: #282444;*/
+  background-image: url("mountains.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.right-side {
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  padding: 2em;
+  width: 80%;
+  max-width: 500px;
+}
+
+.input-username, .input-password {
+  padding: 1em 0.2em;
+  width: 100%;
+  margin:0;
+  margin-bottom: 2em;
+  display: block;
+  border: none;
+  border-bottom: 0.1em solid;
+  outline: none;
+}
+
+
+.login-button {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.6em 1.5em;
+
+  background: #807333;
+  color: white;
+  font-size: medium;
+  text-align: center;
+  cursor: pointer;
+  border:none;
+  border-radius: 10px;
+}
+
+.login-button:hover {
+  opacity: 0.85;
+  transition: 0.1s;
+}
+
+.t1 {
+  color: #282444;
+  font-weight:500;
+  margin: 0;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.t2 {
+  color: #282444;
+  font-size: small;
+  display: block;
+  float: left;
+}
+
+
+/* ========== Only for register.html ========== */
+.input-other {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin:0;
+  margin-bottom: 2em;
+  padding: 1em 0.2em;
+  border: none;
+  border-bottom: 0.1em solid;
+  outline: none;
+}
+/* ===== */
+
+/* FOR MOBILE */
+@media (max-width: 65em) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .logo {
+    color: black;
+  }
+}

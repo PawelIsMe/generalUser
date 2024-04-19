@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #EAECEE;
+}
+
+/* ---------- main container -----------*/
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-container.active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ----- left side (sidebar) ----- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  height: 100%;
+  width: 15em;
+  border-right: 2px solid rgba(0,0,0,0.4);
+  overflow: auto;
+}
+
+/* 2 logos (for computer and phone) */
+.logo {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.logo p {
+  margin: 0;
+}
+
+.logo2 {
+  display: none;
+  text-align: center;
+  margin: 1em 1em 1em 1em;
+  border-right: 2px solid rgba(0,0,0,0.4);
+}
+
+/* options */
+.options-container {
+  padding: 1em;
+}
+
+.options-container a {
+  display: block;
+  margin-bottom: 15px;
+  padding: 0.7em 0 0.7em 2em;
+  text-decoration: none;
+  color: #2E4053;
+  border: 1px solid #2E4053;
+  border-radius: 10px;
+}
+
+.options-container a:hover {
+  /*background-color: #5D6D7E;*/
+  background-color: #2E4053;
+  color: white;
+  transition: 0.4s;
+}
+
+
+/* settings */
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 1em;
+  height: 100vh;
+}
+
+.settings a {
+  margin-bottom: 1em;
+}
+
+
+/* ----- right side ----- */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+}
+
+/* --- top bar --- */
+.top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 4em;
+  border-bottom: 2px solid rgba(0,0,0,0.4);
+}
+
+.top p {
+  margin: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: x-large;
+}
+
+.right-content-of-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+  flex-grow: 1;
+}
+
+.top-menu {
+  display: none;
+  cursor: pointer;
+}
+
+
+/* drop menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 1em;
+  background-color: #616A6B;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index: 1;
+  left: auto;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display: block;}
+
+
+/* main content on the right side*/
+.main-content {
+  width: 100%;
+  height: 100vh;
+}
+
+/* settings (popup window) */
+#settings_popup {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  visibility: hidden;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid black;
+  padding: 2em;
+  width: 35%;
+  height: 25em;
+
+  /* centering */
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#settings_popup.active {
+  display: flex;
+  top: 45%;
+  visibility: visible;
+  opacity: 1;
+  transition: 1s;
+}
+
+
+/* FOR MOBILE */
+@media (max-width: 65em) {
+  .sidebar {
+    display: none;
+  }
+
+  .top-menu {
+    display: block;
+  }
+
+  .logo2 {
+    display: block;
+  }
+}
+
+

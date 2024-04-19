@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
+	<title>AT Sign in</title>
+	<script>
+		if ( window.history.replaceState ) {
+			window.history.replaceState( null, null, window.location.href );
+		}
+	</script>
+</head>
+<body>
+	<div class="logo" style="cursor:pointer;" onclick="location.href='/'">
+		<p style="font-weight:bolder; font-size:x-large;">GU</p>
+		<p style="font-size: small;">General User</p>
+	</div>
+	<div class="main-container">
+   	<div class="left-side">
+			<!-- left side content (only background) -->
+		</div>
+		<div class="right-side">
+			<form class="login-container" method="POST">
+				<h1 class="t1">Login</h1>
+				<label class="t2">User</label>
+				<input name="user" class="input-username" type="text" placeholder="Jimmy" autofocus="autofocus" required>
+				<label class="t2">Password</label>
+				<input name="password" class="input-password" type="password" placeholder="●●●●●●●●●●" required>
+				<p style="color:red">{{ blad1 }}</p>
+				<button class="login-button" onclick="toggle()">Log in</button>
+				<a href="signup" style="margin:0; margin-top: 2.5em; color: #9A9A9A; text-decoration: none; float: right;">Sign up</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

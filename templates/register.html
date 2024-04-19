@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
+	<title>AT Sign up</title>
+</head>
+<body>
+	<div class="logo" style="cursor: pointer" onclick="location.href='/'">
+		<p style="font-weight:bolder; font-size:x-large;">GU</p>
+		<p style="font-size: small;">General User</p>
+	</div>
+	<div class="main-container">
+		<div class="left-side">
+			<!-- left side content (only background)-->
+		</div>
+		<div class="right-side">
+			<form class="login-container" method="POST">
+				<h1 class="t1">Create an account</h1>
+				<div style="width: 100%; text-align: center; display: inline-block;">
+					<div style="display:inline-block; width: 49%">
+						<label class="t2">First name</label>
+						<input name="fname" class="input-other" type="text" placeholder="James" autofocus="autofocus" required>
+					</div>
+					<div style="display:inline-block; width: 49%">
+						<label class="t2">Last name</label>
+						<input name="lname" class="input-other" type="text" placeholder="Adams" required>
+					</div>
+				</div>
+				<label class="t2">User</label>
+				<input name="user" class="input-username" type="text" placeholder="Jimmy" required>
+				<label class="t2">Password</label>
+				<input name="password" class="input-password" type="password" placeholder="●●●●●●●●●●" required>
+				<p style="color:red">{{ blad2 }}</p>
+				<button class="login-button" onclick="toggle()">Sign up</button>
+				<a href="/login" style="margin:0; margin-top: 2.5em; color: #9A9A9A; text-decoration: none; float: right;">Log in</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
