@@ -1,7 +1,7 @@
 # General User
 This is an example so you can take it and change it yourself.
-### The only things you need to have are libraries. You can install them in some IDE e.g. Pycharm or with pip:
-pip install flask<br>
+### The only things you need to have is library. You can install it in some IDE e.g. Pycharm or with pip:
+pip install flask
 
 ### The whole project was designed in figma. Here is the link:
 https://www.figma.com/file/GOBZrowwR1UsK1V161xQb9/AboutTravels?type=design&node-id=0-1&mode=design
