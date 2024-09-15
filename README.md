@@ -1,6 +1,6 @@
 # General User
 This is an example so you can take it and change it yourself.
-### The only things you need to have is library. You can install it in some IDE e.g. Pycharm or with pip:
+### You need a flask. You can install it in some IDE e.g. Pycharm or with pip:
 pip install flask
 
 ### The whole project was designed in figma. Here is the link:
